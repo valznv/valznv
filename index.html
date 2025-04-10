@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Recomendaciones para Deportistas</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 1em;
+    }
+
+    header img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+
+    nav {
+      background-color: #444;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table, th, td {
+      border: 1px solid #999;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    footer {
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://via.placeholder.com/100x100.png?text=LOGO" alt="Logo">
+  <h1>Consejos para Deportistas</h1>
+</header>
+
+<nav>
+  <a href="#nutricion">Nutrición</a>
+  <a href="#ejercicio">Ejercicio</a>
+  <a href="#salud">Salud Mental</a>
+</nav>
+
+<main>
+
+  <section id="nutricion">
+    <h2> Nutrición</h2>
+    <p>La nutrición deportiva es una disciplina que estudia cómo los alimentos influyen en el rendimiento físico. No se trata solo de comer sano, sino de saber qué, cuándo y cómo consumir ciertos nutrientes para optimizar la energía, la recuperación y el desarrollo muscular.</p>
+
+    <p>Los deportistas deben considerar el tipo de actividad que realizan (resistencia, fuerza, velocidad), la duración, la intensidad, el clima, su composición corporal y objetivos personales. A continuación se presenta una tabla con recomendaciones generales:</p>
+
+    <table>
+      <tr>
+        <th>Grupo Alimenticio</th>
+        <th>Recomendación</th>
+        <th>Ejemplos</th>
+      </tr>
+      <tr>
+        <td>Carbohidratos</td>
+        <td>5-7 g/kg/día (moderado) o hasta 10-12 g/kg/día (intenso)</td>
+        <td>Pan integral, arroz, avena, papa, plátano</td>
+      </tr>
+      <tr>
+        <td>Proteínas</td>
+        <td>1.2-2.2 g/kg/día según el tipo de entrenamiento</td>
+        <td>Huevos, pescado, pollo, yogur griego, tofu</td>
+      </tr>
+      <tr>
+        <td>Grasas saludables</td>
+        <td>20-35% del total calórico</td>
+        <td>Aguacate, nueces, aceite de oliva, semillas</td>
+      </tr>
+      <tr>
+        <td>Micronutrientes</td>
+        <td>Variedad de frutas y verduras cada día</td>
+        <td>Zanahoria, espinaca, mango, fresa, tomate</td>
+      </tr>
+      <tr>
+        <td>Hidratación</td>
+        <td>500 ml antes del ejercicio y 150-300 ml cada 20 min</td>
+        <td>Agua, bebidas deportivas (solo si el ejercicio supera 1h)</td>
+      </tr>
+    </table>
+
+    <p>Además, es fundamental:</p>
+    <ul>
+      <li>Realizar comidas previas al ejercicio 2-3 horas antes (ricas en carbohidratos, moderadas en proteínas).</li>
+      <li>Consumir una comida post entrenamiento dentro de los 30-60 minutos posteriores para favorecer la recuperación.</li>
+      <li>Evitar entrenar en ayuno prolongado sin supervisión profesional.</li>
+      <li>Consultar a un nutricionista deportivo para planes personalizados.</li>
+    </ul>
+  </section>
+
+  <section id="ejercicio">
+    <h2> Ejercicio</h2>
+    <p>El entrenamiento deportivo debe ser planificado y adaptado a las necesidades de cada persona. Es importante trabajar diferentes capacidades físicas como fuerza, resistencia, flexibilidad y coordinación para lograr un desarrollo completo.</p>
+
+    <p>A continuación se presenta un ejemplo de distribución semanal equilibrada:</p>
+
+    <canvas id="graficoEjercicio" width="400" height="200"></canvas>
+    <script>
+      const ctx = document.getElementById('graficoEjercicio').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+          datasets: [{
+            label: 'Minutos de ejercicio',
+            data: [60, 45, 30, 60, 45, 90, 0],
+            backgroundColor: 'rgba(75, 192, 192, 0.6)'
+          }]
+        }
+      });
+    </script>
+
+    <p>Recomendaciones clave:</p>
+    <ul>
+      <li>Calentar adecuadamente antes de entrenar y estirar después.</li>
+      <li>Alternar grupos musculares para evitar sobreentrenamiento.</li>
+      <li>Incluir entrenamiento de fuerza al menos 2 veces por semana.</li>
+      <li>Dejar al menos un día completo de descanso a la semana.</li>
+      <li>Realizar evaluaciones físicas periódicas para medir progreso.</li>
+    </ul>
+
+    <p>Consejo: Llevar un diario de entrenamiento ayuda a detectar mejoras, evitar estancamientos y prevenir lesiones.</p>
+  </section>
+
+  <section id="salud">
+    <h2> Salud Mental y Recuperación</h2>
+    <p>El bienestar emocional y psicológico tiene un impacto directo en el rendimiento deportivo. El estrés, la ansiedad, la presión de competir o la falta de motivación pueden reducir la eficacia del entrenamiento y aumentar el riesgo de lesiones o abandono.</p>
+
+    <p>Es fundamental integrar hábitos que cuiden tu salud mental:</p>
+    <ul>
+      <li>Dormir de 7 a 9 horas para una recuperación adecuada.</li>
+      <li>Practicar técnicas de relajación como mindfulness, respiración profunda o yoga.</li>
+      <li>Fomentar el equilibrio entre vida personal, estudios o trabajo y deporte.</li>
+      <li>Establecer metas realistas y alcanzables.</li>
+      <li>Buscar apoyo psicológico profesional si es necesario.</li>
+    </ul>
+
+    <p>También se recomienda:</p>
+    <ul>
+      <li>Evitar compararse constantemente con otros atletas.</li>
+      <li>Celebrar logros pequeños y grandes por igual.</li>
+      <li>Rodearse de personas que aporten ánimo y apoyo.</li>
+      <li>Aprender a reconocer señales de agotamiento mental.</li>
+    </ul>
+
+    <p>Consejo: El descanso psicológico es tan importante como el físico. No tengas miedo de tomar una pausa si la necesitas.</p>
+  </section>
+
+</main>
+
+<footer>
+  <h3>Contacto</h3>
+  <p>Email: <a href="mailto:valezamonav@gmail.com">valezamonav@gmail.com</a> | Instagram: <a href="https://instagram.com/valznv" target="_blank">@valznv</a></p>
+</footer>
+
+</body>
+</html>
